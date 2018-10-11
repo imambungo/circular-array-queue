@@ -9,15 +9,15 @@ public class CircularArrayQueue {
 
     public CircularArrayQueue() {
         this.size = 0;
-        this.front = -1;
-        this.rear = 0;
+        this.front = 0;
+        this.rear = -1;
         this.array = new int[10];
     }
 
     public CircularArrayQueue(int arrSize) {
         this.size = 0;
-        this.front = -1;
-        this.rear = 0;
+        this.front = 0;
+        this.rear = -1;
         this.array = new int[arrSize];
     }
 
@@ -55,7 +55,7 @@ public class CircularArrayQueue {
         if (isEmpty()) {
             System.out.println("Antrian sudah habis.");
         } else {
-            for (int i = this.front; i != this.rear; i++) {
+            for (int i = this.front; i != this.rear; i = ++i % this.array.length) {
                 System.out.print(this.array[i] + " ");
             }
             System.out.println(this.array[this.rear]);
