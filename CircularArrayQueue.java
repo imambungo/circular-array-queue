@@ -8,17 +8,17 @@ public class CircularArrayQueue {
     private int[] array;
 
     public CircularArrayQueue() {
-        this.size = 10;
+        this.size = 0;
         this.front = -1;
         this.rear = 0;
-        this.array = new int[this.size];
+        this.array = new int[10];
     }
 
-    public CircularArrayQueue(int size) {
-        this.size = size;
+    public CircularArrayQueue(int arrSize) {
+        this.size = 0;
         this.front = -1;
         this.rear = 0;
-        this.array = new int[this.size];
+        this.array = new int[arrSize];
     }
 
     public boolean isFull() {
