@@ -31,7 +31,7 @@ public class CircularArrayQueue {
 
     public void enqueue(int value) {
         if (isFull()) {
-            System.out.println("Gak muat lagi gan ¯\\_(ツ)_/¯");
+            System.out.println("Tidak muat lagi");
         } else {
             this.rear = ++this.rear % this.array.length;
             this.array[this.rear] = value;
@@ -53,12 +53,13 @@ public class CircularArrayQueue {
 
     public void print() {
         if (isEmpty()) {
-            System.out.println("Antrian sudah habis.");
+            System.out.println("[]");
         } else {
+            System.out.print("[");
             for (int i = this.front; i != this.rear; i = ++i % this.array.length) {
-                System.out.print(this.array[i] + " ");
+                System.out.print(this.array[i] + ",");
             }
-            System.out.println(this.array[this.rear]);
+            System.out.println(this.array[this.rear] + "]");
         }
     }
 }
