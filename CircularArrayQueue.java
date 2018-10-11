@@ -125,5 +125,6 @@ public class CircularArrayQueue {
         print();
         print2();
         print3();
+        System.out.println();
     }
 }
