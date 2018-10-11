@@ -62,4 +62,23 @@ public class CircularArrayQueue {
             System.out.println(this.array[this.rear] + "]");
         }
     }
+
+    public void print2() {
+        for (int i = 0; i < this.array.length; i++) {
+            System.out.print(this.array[i]);
+        }
+        System.out.println();
+        for (int i = 0; i < this.array.length; i++) {
+            if (i == this.front && i == this.rear) {
+                System.out.print("*");
+            } else if (i == this.front) {
+                System.out.print("f");
+            } else if (i == this.rear) {
+                System.out.print("r");
+            } else {
+                System.out.print(" ");
+            }
+        }
+        System.out.println();
+    }
 }
