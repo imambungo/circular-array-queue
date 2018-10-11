@@ -38,6 +38,7 @@ public class CircularArrayQueue {
             this.array[this.rear] = value;
             this.size++;
         }
+        printChange();
     }
 
     public int dequeue() {
@@ -50,6 +51,7 @@ public class CircularArrayQueue {
             this.front = ++this.front % this.array.length;
             this.size--;
         }
+        printChange();
         return returnValue;
     }
 
@@ -117,5 +119,11 @@ public class CircularArrayQueue {
             }
         }
         System.out.println("  (Posisi front dan rear)");
+    }
+
+    public void printChange() {
+        print();
+        print2();
+        print3();
     }
 }
