@@ -25,7 +25,7 @@ public class CircularArrayQueue {
         return this.size == this.array.length;
     }
 
-    public boolean imEmpty() {
+    public boolean isEmpty() {
         return this.size == 0;
     }
 
