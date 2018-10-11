@@ -64,10 +64,39 @@ public class CircularArrayQueue {
     }
 
     public void print2() {
+        System.out.print("[");
         for (int i = 0; i < this.array.length; i++) {
             System.out.print(this.array[i]);
+            if (i != this.array.length - 1) {
+                System.out.print(",");
+            }
         }
-        System.out.println();
+        System.out.println("]");
+    }
+
+    public void print3() {
+        System.out.print("[");
+        for (int i = 0; i < this.array.length; i++) {
+            if (this.rear < this.front && !isEmpty()) {
+                if (i <= this.rear || i >= this.front) {
+                    System.out.print(this.array[i]);
+                } else {
+                    System.out.print("-");
+                }
+            } else if (this.front <= this.rear && !isEmpty()) {
+                if (i >= this.front && i <= this.rear) {
+                    System.out.print(this.array[i]);
+                } else {
+                    System.out.print("-");
+                }
+            } else {
+                System.out.print("-");
+            }
+            if (i != this.array.length-1) {
+                System.out.print(",");
+            }
+        }
+        System.out.print("]\n ");
         for (int i = 0; i < this.array.length; i++) {
             if (i == this.front && i == this.rear) {
                 System.out.print("*");
@@ -76,6 +105,9 @@ public class CircularArrayQueue {
             } else if (i == this.rear) {
                 System.out.print("r");
             } else {
+                System.out.print(" ");
+            }
+            if (i != this.array.length - 1) {
                 System.out.print(" ");
             }
         }
