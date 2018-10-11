@@ -9,15 +9,15 @@ public class CircularArrayQueue {
 
     public CircularArrayQueue() {
         this.size = 0;
-        this.front = 0;
-        this.rear = -1;
+        this.front = -1;
+        this.rear = 0;
         this.array = new int[10];
     }
 
     public CircularArrayQueue(int arrSize) {
         this.size = 0;
-        this.front = 0;
-        this.rear = -1;
+        this.front = -1;
+        this.rear = 0;
         this.array = new int[arrSize];
     }
 
@@ -30,6 +30,10 @@ public class CircularArrayQueue {
     }
 
     public void enqueue(int value) {
+        if (this.front == -1 && this.rear == 0) {
+            this.front = 0;
+            this.rear = -1;
+        }
         System.out.println("enqueue(" + value + ")");
         if (isFull()) {
             System.out.println("Tidak muat lagi");
@@ -42,6 +46,10 @@ public class CircularArrayQueue {
     }
 
     public int dequeue() {
+        if (this.front == -1 && this.rear == 0) {
+            this.front = 0;
+            this.rear = -1;
+        }
         System.out.println("dequeue()");
         int returnValue = 0;
         if (isEmpty()) {
