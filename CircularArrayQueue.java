@@ -47,4 +47,15 @@ public class CircularArrayQueue {
             this.size--;
         }
     }
+
+    public void print() {
+        if (isEmpty()) {
+            System.out.println("Antrian sudah habis.");
+        } else {
+            for (int i = this.front; i != this.rear; i++) {
+                System.out.print(this.array[i] + " ");
+            }
+            System.out.println(this.array[this.rear]);
+        }
+    }
 }
