@@ -40,12 +40,15 @@ public class CircularArrayQueue {
     }
 
     public int dequeue() {
+        int returnValue = 0;
         if (isEmpty()) {
             System.out.println("Antrian sudah habis.");
         } else {
+            returnValue = this.array[this.front];
             this.front = ++this.front % this.array.length;
             this.size--;
         }
+        return returnValue;
     }
 
     public void print() {
