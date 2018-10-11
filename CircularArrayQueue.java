@@ -25,6 +25,10 @@ public class CircularArrayQueue {
         return this.size == this.array.length;
     }
 
+    public boolean imEmpty() {
+        return this.size == 0;
+    }
+
     public void enqueue(int value) {
         if (isFull()) {
             System.out.println("Gak muat lagi gan ¯\\_(ツ)_/¯");
@@ -32,6 +36,15 @@ public class CircularArrayQueue {
             this.rear = ++this.rear % this.array.length;
             this.array[this.rear] = value;
             this.size++;
+        }
+    }
+
+    public int dequeue() {
+        if (isEmpty()) {
+            System.out.println("Antrian sudah habis.");
+        } else {
+            this.front = ++this.front % this.array.length;
+            this.size--;
         }
     }
 }
