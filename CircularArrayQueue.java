@@ -30,6 +30,7 @@ public class CircularArrayQueue {
     }
 
     public void enqueue(int value) {
+        System.out.println("enqueue(" + value + ")");
         if (isFull()) {
             System.out.println("Tidak muat lagi");
         } else {
@@ -40,6 +41,7 @@ public class CircularArrayQueue {
     }
 
     public int dequeue() {
+        System.out.println("dequeue()");
         int returnValue = 0;
         if (isEmpty()) {
             System.out.println("Antrian sudah habis.");
@@ -52,6 +54,7 @@ public class CircularArrayQueue {
     }
 
     public void print() {
+        // print queue
         if (isEmpty()) {
             System.out.println("[]");
         } else {
@@ -64,6 +67,7 @@ public class CircularArrayQueue {
     }
 
     public void print2() {
+        // print semua elemen array
         System.out.print("[");
         for (int i = 0; i < this.array.length; i++) {
             System.out.print(this.array[i]);
@@ -71,10 +75,11 @@ public class CircularArrayQueue {
                 System.out.print(",");
             }
         }
-        System.out.println("]");
+        System.out.println("] (Semua elemen array");
     }
 
     public void print3() {
+        // print posisi elemen queue didalam array
         System.out.print("[");
         for (int i = 0; i < this.array.length; i++) {
             if (this.rear < this.front && !isEmpty()) {
@@ -92,11 +97,11 @@ public class CircularArrayQueue {
             } else {
                 System.out.print("-");
             }
-            if (i != this.array.length-1) {
+            if (i != this.array.length - 1) {
                 System.out.print(",");
             }
         }
-        System.out.print("]\n ");
+        System.out.print("] (Posisi elemen queue didalam array)\n ");
         for (int i = 0; i < this.array.length; i++) {
             if (i == this.front && i == this.rear) {
                 System.out.print("*");
@@ -111,6 +116,6 @@ public class CircularArrayQueue {
                 System.out.print(" ");
             }
         }
-        System.out.println();
+        System.out.println("  (Posisi front dan rear)");
     }
 }
